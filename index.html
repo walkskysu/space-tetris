@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c1b">
+  <title>Space Tetris · Orbital Arcade</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <main class="mission">
+    <header>
+      <div class="eyebrow"><span class="signal"></span> ORBITAL ARCADE <span class="edition">/ 001</span></div>
+      <h1>SPACE<span>TETRIS</span><span class="orbit" aria-hidden="true">✦</span></h1>
+      <p class="subtitle">Find your rhythm. Make room for the universe.</p>
+    </header>
+    <div class="game-layout">
+      <section class="board-section" aria-label="Game board">
+        <div class="board-caption"><span>FLIGHT DECK</span><span id="flight-state">STANDBY</span></div>
+        <div class="board-wrap">
+          <canvas id="board" width="300" height="600" tabindex="0" aria-label="Tetris playfield, 10 columns and 20 rows" aria-describedby="instructions">Use the controls to move and rotate falling pieces, filling horizontal lines.</canvas>
+          <div id="overlay" class="overlay">
+            <span class="overlay-star" aria-hidden="true">✧</span>
+            <h2 id="overlay-title">Ready for launch?</h2>
+            <p id="overlay-copy">Build a little order<br>in the cosmic chaos.</p>
+            <button id="launch" class="primary">Start mission <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        <div class="board-footer"><span class="signal"></span> <span id="board-note">ALL SYSTEMS READY</span><span>10 × 20</span></div>
+      </section>
+      <aside class="dashboard" aria-label="Mission controls and stats">
+        <section class="panel score-panel" aria-label="Score">
+          <h2>MISSION SCORE</h2><output id="score">000000</output>
+          <div class="metrics"><div><span>LINES</span><output id="lines">0</output></div><div><span>LEVEL</span><output id="level">01</output></div></div>
+        </section>
+        <section class="panel next-panel" aria-label="Next piece">
+          <h2>ON APPROACH</h2><canvas id="next" width="160" height="100" role="img" aria-label="Next tetromino"></canvas>
+          <p>Next in your orbit</p>
+        </section>
+        <div class="mission-controls"><button id="pause" disabled aria-label="Pause game">Pause <kbd>P</kbd></button><button id="restart" aria-label="Restart game">Restart <kbd>R</kbd></button></div>
+        <section class="panel instructions" id="instructions">
+          <h2>FLIGHT MANUAL</h2>
+          <dl><div><dt><kbd>←</kbd> <kbd>→</kbd></dt><dd>Move</dd></div><div><dt><kbd>↑</kbd></dt><dd>Rotate</dd></div><div><dt><kbd>↓</kbd></dt><dd>Soft drop</dd></div><div><dt><kbd>SPACE</kbd></dt><dd>Hard drop</dd></div><div><dt><kbd>P</kbd> / <kbd>R</kbd></dt><dd>Pause / restart</dd></div></dl>
+          <p>Fill a row to clear it.<br>Keep your stack below the stars.</p>
+        </section>
+      </aside>
+    </div>
+    <nav class="touch-controls" aria-label="On-screen gameplay controls"><button data-action="left" aria-label="Move left">←</button><button data-action="rotate" aria-label="Rotate clockwise">↻</button><button data-action="right" aria-label="Move right">→</button><button data-action="down" aria-label="Soft drop">↓</button><button data-action="drop" aria-label="Hard drop">DROP ⤓</button></nav>
+    <p id="announcement" class="sr-only" role="status" aria-live="polite"></p>
+    <footer>NO DESTINATION. JUST ONE MORE LINE. <span aria-hidden="true">✦</span></footer>
+  </main>
+</body>
+</html>
