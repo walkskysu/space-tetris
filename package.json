@@ -1,0 +1,12 @@
+{
+  "name": "space-tetris",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A dependency-free orbital block puzzle",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=20" }
+}
